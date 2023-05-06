@@ -3,6 +3,7 @@ import { Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import useTitle from "../../../hooks/useTitle";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const Login = () => {
@@ -11,7 +12,8 @@ const Login = () => {
   const location = useLocation();
   console.log("login page location", location);
   const from = location.state?.from?.pathname || "/category/0";
-
+  useTitle("Login");
+  
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
